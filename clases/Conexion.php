@@ -5,6 +5,8 @@
             $usuario = "root";
             $password = "";
             $db = "helpdesk";
+            $conexion = mysqli_connect($servidor, $usuario, $password, $db);
+            return $conexion;
         }
     }
 
