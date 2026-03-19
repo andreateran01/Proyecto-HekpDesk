@@ -1,7 +1,20 @@
 <?php
+header('Content-Type: application/json');
 
-    $idReporte = $_POST['idReporte'];
+if(!isset($_POST['idReporte'])){
+    echo json_encode(["error" => "No se recibió idReporte"]);
+    exit();
+}
 
-    include "../../clases/Reportes.php";
-    $Reportes = new Reportes();
-    echo json_encode($Reportes->obtenerSolucion($idReporte));
+$idReporte = $_POST['idReporte'];
+
+include "../../clases/Reportes.php";
+$Reportes = new Reportes();
+$solucion = $Reportes->obtenerSolucion($idReporte);
+
+if($solucion){
+    echo json_encode($solucion);
+} else {
+    echo json_encode(["error" => "Reporte no encontrado"]);
+}
+?>
