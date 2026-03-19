@@ -62,7 +62,7 @@
                     </a>
                 </li>
             <?php } else if($_SESSION['usuario']['rol'] == 2) { ?>
-                <!--DE aqui son las vistas del administrador-->
+                <!--AQUI SON LAS VISTAS DEL ADMINISTRADOR-->
                 <li class="nav-item">
                     <a class="nav-link" href="usuarios.php">
                         <span class="fas fa-users-cog"></span> Usuarios
