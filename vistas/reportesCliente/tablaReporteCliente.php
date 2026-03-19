@@ -17,8 +17,7 @@
                 equipo.nombre AS nombreEquipo,
                 reporte.descripcion_problema AS problema,
                 reporte.estatus AS estatus,
-                reporte.solucion_problema AS solucion,
-                reporte.fecha AS fecha
+                reporte.solucion_problema AS solucion
             FROM
                 t_reportes AS reporte
                     INNER JOIN
@@ -37,19 +36,18 @@
         <th>#</th>
         <th>Persona</th>
         <th>Dispositivo</th>
-        <th>Fecha</th>
         <th>Descripcion</th>
         <th>Estatus</th>
         <th>Solucion</th>
         <th>Eliminar</th>
     </thead>
     <tbody>
+
     <?php while($mostrar = mysqli_fetch_array($respuesta)) {  ?>
         <tr>
             <td> <?php echo $contador++; ?> </td>
             <td><?php echo $mostrar['nombrePersona'];?></td>
             <td><?php echo $mostrar['nombreEquipo'];?></td>
-            <td><?php echo $mostrar['fecha'];?></td>
             <td><?php echo $mostrar['problema'];?></td>
             <td>
                 <?php
